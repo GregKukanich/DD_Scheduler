@@ -1,4 +1,4 @@
-import brother
+import Calculations
 from gui import *
 from tabulate import tabulate
 def main():

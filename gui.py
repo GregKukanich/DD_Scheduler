@@ -1,6 +1,6 @@
 from tkinter import *
 import csv
-from brother import *
+from Calculations import *
 
 class gui:
     def runGUI(self):
