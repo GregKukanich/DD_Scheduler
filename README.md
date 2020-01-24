@@ -1,2 +1,3 @@
 # DD_Scheduler
-Work in progress Designated Driver Schedule Maker for fraternity
+*Work in progress* 
+Designated Driver Schedule Maker for fraternity
