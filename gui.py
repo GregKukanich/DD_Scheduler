@@ -1,5 +1,6 @@
 from tkinter import *
 import csv
+from brother import *
 
 class gui:
     def runGUI(self):
@@ -7,17 +8,25 @@ class gui:
             print("Name: %s\nGPA: %s\nGrade Level: %s" % (e1.get(), e2.get(), e3.get()))
             ###CREATING EXCEL FILE FOR MANUAL ENTRY###
             # data rows of csv file
-            rows = [[e1.get(), e2.get(), e3.get()]]
+            e4 = None
+
             # name of csv file
             filename = "Brothers.csv"
 
+            #####Calling function to calc shifts######
+            numShifts = Calc()
+            e4 = numShifts.calcShifts(float(e2.get()))
+            e5 = numShifts.calcDays(float(e3.get()))
+
+            rows = [[e1.get(), e2.get(), e3.get(), e4,e5]]
             # writing to csv file
             with open(filename, 'a') as csvfile:
                 # creating a csv writer object
                 csvwriter = csv.writer(csvfile)
-
                 # writing the data rows
                 csvwriter.writerows(rows)
+
+
             e1.delete(0, END)
             e2.delete(0, END)
             e3.delete(0, END)
@@ -41,7 +50,7 @@ class gui:
         e2.grid(row=1, column=1)
         e3.grid(row=2, column=1)
         # field names
-        fields = ['Name', 'GPA', 'Year']
+        fields = ['Name', 'GPA', 'Year', 'Num Shifts', 'Days']
         filename = "Brothers.csv"
         with open(filename, 'a') as csvfile:
             # creating a csv writer object
