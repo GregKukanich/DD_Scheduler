@@ -2,6 +2,7 @@ from guiTest import *
 
 
 def main():
+    #*****DIALOG STARTUP*****#
      import sys
      app = QtWidgets.QApplication(sys.argv)
      Dialog = QtWidgets.QDialog()
@@ -9,6 +10,7 @@ def main():
      ui.setupUi(Dialog)
      Dialog.show()
      sys.exit(app.exec_())
+
 
 
 main()
