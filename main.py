@@ -9,10 +9,16 @@ def main():
        ui = Ui_Dialog()
        ui.setupUi(Dialog)
        Dialog.show()
-       sys.exit(app.exec_())
 
        csv = csvExp()
-       csv.fileStart()
+       csv.fileStart() #Start .csv file for members entered into gui dialog
+
+
+
+
+       sys.exit(app.exec_())
+
+
 
 
 
