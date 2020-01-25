@@ -3,6 +3,8 @@ from Calculations import *
 
 class csvExp:
      def fileStart(self):
+          """Start csv file and add field headers for data.
+          """
           # field names
           fields = ['Name', 'GPA', 'Year', 'Num Shifts', 'Days']
           filename = "Brothers.csv"
