@@ -78,3 +78,6 @@ class gui:
           master.bind('<Return>', submit_window)
 
           master.mainloop()
+
+test = gui()
+test.runGUI()
