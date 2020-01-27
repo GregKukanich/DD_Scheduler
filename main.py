@@ -13,10 +13,12 @@ def main():
      ui.setupUi(Dialog)
      Dialog.show()
      csv = csvExp()
+     brothers1 = brothers()
      csv.fileStart()  # Start .csv file for members entered into gui dialog
-     G = brothers("Greg",3.3,"Junior",5)
+     brothers1.intake()
      calendar = cal()
-     calendar.createCal(G.name)#init calendar file
+
+
      sys.exit(app.exec_())
 
 

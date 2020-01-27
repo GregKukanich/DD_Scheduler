@@ -10,6 +10,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 from csvExport import *
+from Brothers import *
 
 
 class Ui_Dialog(object):
@@ -79,13 +80,16 @@ class Ui_Dialog(object):
 
      def accept(self):
           print("******************************************")
+
           csv = csvExp()
+
           csv.fileFill(self.nameInput.displayText(), self.gpaInput.displayText(), self.gradeInput.currentText())
           self.nameInput.clear()
           self.gradeInput.clear()
           self.gradeInput.addItems(["Freshman","Sophomore","Junior","Senior","5th Year","Old"])
           self.gpaInput.clear()
           self.nameInput.setFocus()
+
 
      def retranslateUi(self, Dialog):
           _translate = QtCore.QCoreApplication.translate
