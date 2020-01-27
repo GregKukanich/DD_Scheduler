@@ -14,7 +14,6 @@ class cal:
           with open('DD_Calendar.ics', 'w') as my_file:
                my_file.writelines(c)
 
-     #def addCal(self):
-          #
+
 
 
