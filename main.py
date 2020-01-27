@@ -1,5 +1,7 @@
 from csvExport import *
 from guiTest import *
+from Brothers import *
+from calExport import *
 
 
 def main():
@@ -12,7 +14,10 @@ def main():
      Dialog.show()
      csv = csvExp()
      csv.fileStart()  # Start .csv file for members entered into gui dialog
-
+     G = brothers("Greg",3.3,"Junior",5)
+     calendar = cal()
+     print(G.name)
+     calendar.createCal(G.name)
      sys.exit(app.exec_())
 
 

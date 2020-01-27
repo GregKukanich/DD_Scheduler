@@ -68,8 +68,9 @@ class Ui_Dialog(object):
           self.label_5 = QtWidgets.QLabel(Dialog)
           self.label_5.setGeometry(QtCore.QRect(100, 10, 391, 31))
           self.label_5.setObjectName("label_5")
+          self.nameInput.setFocus()
           self.buttonBox.accepted.connect(self.accept)
-          self.buttonBox.rejected.connect(self.reject)
+          self.buttonBox.rejected.connect(Dialog.reject)
           self.retranslateUi(Dialog)
 
           QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -80,10 +81,11 @@ class Ui_Dialog(object):
           print("******************************************")
           csv = csvExp()
           csv.fileFill(self.nameInput.displayText(), self.gpaInput.displayText(), self.gradeInput.currentText())
-
-     def reject(self):
-          print("&&&&&&&&&&&&&&&&&&&&&&&&")
-          print(self.nameInput.displayText())
+          self.nameInput.clear()
+          self.gradeInput.clear()
+          self.gradeInput.addItems(["Freshman","Sophomore","Junior","Senior","5th Year","Old"])
+          self.gpaInput.clear()
+          self.nameInput.setFocus()
 
      def retranslateUi(self, Dialog):
           _translate = QtCore.QCoreApplication.translate
