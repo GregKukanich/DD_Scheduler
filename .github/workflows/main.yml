@@ -1,3 +1,0 @@
-- name: Install pipenv
-  uses: dschep/install-pipenv-action@v1
-
