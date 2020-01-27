@@ -22,3 +22,6 @@ class Calc:
                return 'Fri or Sat'
           else:
                return "ERROR"
+
+     #def calcSched(self):
+          #
