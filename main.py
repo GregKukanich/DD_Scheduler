@@ -17,7 +17,7 @@ def main():
      G = brothers("Greg",3.3,"Junior",5)
      calendar = cal()
      print(G.name)
-     calendar.createCal(G.name)
+     calendar.createCal(G.name)#init calendar file
      sys.exit(app.exec_())
 
 
