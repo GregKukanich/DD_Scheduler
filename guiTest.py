@@ -102,7 +102,7 @@ class Ui_Dialog(object):
           self.label_2.setText(_translate("Dialog",
                                           "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">GPA:</span></p></body></html>"))
           self.label_3.setText(_translate("Dialog",
-                                          "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Year(1-4)</span></p></body></html>"))
+                                          "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Year</span></p></body></html>"))
           self.label_5.setText(_translate("Dialog",
                                           "<html><head/><body><p><span style=\" font-size:18pt; font-weight:600;\">ΣΠ Designated Driver Scheduler</span></p></body></html>"))
 
