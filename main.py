@@ -1,6 +1,7 @@
+from Calculations import *
 from calExport import *
 from guiTest import *
-from Calculations import *
+
 
 def main():
      # *****DIALOG STARTUP*****#

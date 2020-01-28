@@ -95,7 +95,7 @@ class Ui_Dialog(object):
           brothers1 = brothers()
           brothers1.intake()
           # ***********************# Creating Calendar for DDs
-          #brothers.list1[]
+          # brothers.list1[]
           # ***********************#
           sys.exit(0)
 

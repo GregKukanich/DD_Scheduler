@@ -1,9 +1,8 @@
 from ics import Calendar, Event
-import datetime
-from Brothers import *
+
 
 class cal:
-     def createCal(self,name):
+     def createCal(self, name):
           c = Calendar()
           e = Event()
           e.name = name
@@ -13,5 +12,3 @@ class cal:
           c.events
           with open('DD_Calendar.ics', 'w') as my_file:
                my_file.writelines(c)
-
-
