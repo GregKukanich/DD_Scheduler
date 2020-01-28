@@ -47,13 +47,13 @@ class Calc:
           start_date = date(2020,1,28)
           end_date = date(2020,4,28)
           delta = timedelta(days=1)
-          while start_date <= end_date:
-               if start_date.weekday() == 3:
+          while start_date <= end_date:      #Looping through dates between start/end dates looking for Thrs,Fri,Sat within range
+               if start_date.weekday() == 3:      #Thursday
                     dates.add(start_date)
-               elif start_date.weekday() == 4:
+               elif start_date.weekday() == 4:    #Friday
                     dates.add(start_date)
-               elif start_date.weekday() == 5:
+               elif start_date.weekday() == 5:    #Saturday
                     dates.add(start_date)
-               #print(start_date.strftime("%Y-%m-%d"))
+               #print(start_date.strftime("%Y-%m-%d")) Printing in formatted way
                start_date += delta
           print(dates.__len__())
