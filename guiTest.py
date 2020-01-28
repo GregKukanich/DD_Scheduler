@@ -9,8 +9,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-from csvExport import *
 from Brothers import *
+from csvExport import *
 
 
 class Ui_Dialog(object):
@@ -87,16 +87,16 @@ class Ui_Dialog(object):
 
           self.nameInput.clear()
           self.gradeInput.clear()
-          self.gradeInput.addItems(["Freshman","Sophomore","Junior","Senior","5th Year","Old"])
+          self.gradeInput.addItems(["Freshman", "Sophomore", "Junior", "Senior", "5th Year", "Old"])
           self.gpaInput.clear()
           self.nameInput.setFocus()
 
      def reject(self):
           brothers1 = brothers()
           brothers1.intake()
-          #***********************# Creating Calendar for DDs
-          brothers.list1[]
-          #***********************#
+          # ***********************# Creating Calendar for DDs
+          #brothers.list1[]
+          # ***********************#
           sys.exit(0)
 
      def retranslateUi(self, Dialog):

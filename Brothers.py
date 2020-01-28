@@ -1,8 +1,11 @@
-from Calculations import *
 import csv
+
+from Calculations import *
+
 
 class brothers:
      list1 = []
+
      def __init__(self):
           self.name = None
           self.gpa = None
@@ -11,9 +14,10 @@ class brothers:
           self.days = None
           self.time = None
           self.date = None
+
      def intake(self):
           with open('Brothers.csv') as file:
-               reader = csv.reader(file, delimiter=',',quotechar='|')
+               reader = csv.reader(file, delimiter=',', quotechar='|')
                file.readline()
                for row in reader:
                     brothers1 = brothers()
@@ -25,7 +29,8 @@ class brothers:
                     brothers.list1.append(brothers1)
 
                for x in range(len(brothers.list1)):
-                    print (brothers.list1[x].name,brothers.list1[x].gpa,brothers.list1[x].year,brothers.list1[x].shifts,brothers.list1[x].days)
+                    print(brothers.list1[x].name, brothers.list1[x].gpa, brothers.list1[x].year,
+                          brothers.list1[x].shifts, brothers.list1[x].days)
 
           # #
           # num = brothers()
