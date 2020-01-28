@@ -17,8 +17,10 @@ def main():
 
      calendar = cal()
      calc = Calc()
-     calc.calcSched()
+     calc.calcWeekendDays()
+
      sys.exit(app.exec_())
+
 
 
 main()

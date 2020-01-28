@@ -8,10 +8,10 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from Calculations import *
 from Brothers import *
 from csvExport import *
-
+import sys
 
 class Ui_Dialog(object):
      # def reject(self):
@@ -94,6 +94,8 @@ class Ui_Dialog(object):
      def reject(self):
           brothers1 = brothers()
           brothers1.intake()
+          calc = Calc()
+          calc.assignShifts()
           # ***********************# Creating Calendar for DDs
           # brothers.list1[]
           # ***********************#

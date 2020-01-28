@@ -1,7 +1,9 @@
 from datetime import date, timedelta
-
+from Brothers import *
 
 class Calc:
+     datesSet = set()
+     usedDatesSet = set()
      def calcShifts(self, num):
           if num >= 3.0 and num <= 4.0:
                return 4
@@ -40,19 +42,23 @@ class Calc:
           else:
                return "ERROR"
 
-     def calcSched(self):
-          dates = set()
-          usedDates = set()
-          start_date = date(2020, 1, 28)
+     def calcWeekendDays(self):
+          start_date = date(2020, 1, 13)
           end_date = date(2020, 4, 28)
           delta = timedelta(days=1)
           while start_date <= end_date:  # Looping through dates between start/end dates looking for Thrs,Fri,Sat within range
                if start_date.weekday() == 3:  # Thursday
-                    dates.add(start_date)
+                    Calc.datesSet.add(start_date)
                elif start_date.weekday() == 4:  # Friday
-                    dates.add(start_date)
+                    Calc.datesSet.add(start_date)
                elif start_date.weekday() == 5:  # Saturday
-                    dates.add(start_date)
+                    Calc.datesSet.add(start_date)
                # print(start_date.strftime("%Y-%m-%d")) Printing in formatted way
                start_date += delta
-          print(dates.__len__())
+          print(Calc.datesSet.__len__()*4)
+
+     def assignShifts(self):
+          for x in range(brothers.getTotShifts()):
+
+
+

@@ -1,5 +1,5 @@
 from Calculations import *
-
+import csv
 
 class brothers:
      list1 = []
@@ -12,6 +12,7 @@ class brothers:
           self.days = None
           self.time = None
           self.date = None
+          self.ctr = None
 
      def intake(self):
           with open('Brothers.csv') as file:
@@ -24,6 +25,7 @@ class brothers:
                     brothers1.year = row[2]
                     brothers1.shifts = row[3]
                     brothers1.days = row[4]
+                    brothers1.ctr = brothers1.shifts
                     brothers.list1.append(brothers1)
 
                for x in range(len(brothers.list1)):
@@ -39,6 +41,15 @@ class brothers:
           # num.shifts = shiftsCalc.calcShifts(float(gpa))
           # num.days =  shiftsCalc.calcDays(grade)
           # self.list1.append(num)
+
+     def getTotShifts():
+          x=0
+          while x != 1:
+               ctr =0
+               for i in range(len(brothers.list1)):
+                    ctr += int(brothers.list1[i].shifts)
+               x = x+1
+          return ctr
 
      def display(self):
           for i in self.list1:
