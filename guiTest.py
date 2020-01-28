@@ -71,7 +71,7 @@ class Ui_Dialog(object):
           self.label_5.setObjectName("label_5")
           self.nameInput.setFocus()
           self.buttonBox.accepted.connect(self.accept)
-          self.buttonBox.rejected.connect(Dialog.reject)
+          self.buttonBox.rejected.connect(self.reject)
           self.retranslateUi(Dialog)
 
           QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -84,12 +84,20 @@ class Ui_Dialog(object):
           csv = csvExp()
 
           csv.fileFill(self.nameInput.displayText(), self.gpaInput.displayText(), self.gradeInput.currentText())
+
           self.nameInput.clear()
           self.gradeInput.clear()
           self.gradeInput.addItems(["Freshman","Sophomore","Junior","Senior","5th Year","Old"])
           self.gpaInput.clear()
           self.nameInput.setFocus()
 
+     def reject(self):
+          brothers1 = brothers()
+          brothers1.intake()
+          #***********************# Creating Calendar for DDs
+          brothers.list1[]
+          #***********************#
+          sys.exit(0)
 
      def retranslateUi(self, Dialog):
           _translate = QtCore.QCoreApplication.translate

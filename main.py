@@ -9,13 +9,13 @@ def main():
      import sys
      app = QtWidgets.QApplication(sys.argv)
      Dialog = QtWidgets.QDialog()
+     brothers1 = brothers()
      ui = Ui_Dialog()
      ui.setupUi(Dialog)
      Dialog.show()
      csv = csvExp()
-     brothers1 = brothers()
      csv.fileStart()  # Start .csv file for members entered into gui dialog
-     brothers1.intake()
+
      calendar = cal()
 
 

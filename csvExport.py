@@ -10,9 +10,9 @@ class csvExp:
           # field names
           fields = ['Name' , 'GPA' , 'Year' , 'NumShifts' , 'Days']
           filename = "Brothers.csv"
-          with open(filename, 'w') as csvfile:
+          with open(filename, 'w+') as csvfile:
                # creating a csv writer object
-               csvwriter = csv.writer(csvfile)
+               csvwriter = csv.writer(csvfile, lineterminator='\n')
 
                # writing the fields
                csvwriter.writerow(fields)
@@ -27,10 +27,10 @@ class csvExp:
           e4 = numShifts.calcShifts(float(gpa))
           e5 = numShifts.calcDays(numShifts.calcGrade(grade))
 
-          rows = [[e1, e2, e3, e4, e5]]
+          rows = [[e1,e2,e3,e4,e5]]
           # writing to csv file
           with open(filename, 'a') as csvfile:
                # creating a csv writer object
-               csvwriter = csv.writer(csvfile)
+               csvwriter = csv.writer(csvfile, lineterminator='\n')
                # writing the data rows
                csvwriter.writerows(rows)

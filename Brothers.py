@@ -2,18 +2,30 @@ from Calculations import *
 import csv
 
 class brothers:
+     list1 = []
      def __init__(self):
-          self.list1 = []
+          self.name = None
+          self.gpa = None
+          self.year = None
+          self.shifts = None
+          self.days = None
+          self.time = None
+          self.date = None
      def intake(self):
-          with open('Brothers.csv',newline='') as file:
-               reader = csv.reader(file, delimiter=' ',quotechar='|')
+          with open('Brothers.csv') as file:
+               reader = csv.reader(file, delimiter=',',quotechar='|')
+               file.readline()
                for row in reader:
-                    print(row)
-                    # self.name = row['Name']
-                    # self.gpa = row['GPA']
-                    # self.year = row['Year']
-                    # self.shifts = row['Shifts']
-                    # self.shifts = row['Days']
+                    brothers1 = brothers()
+                    brothers1.name = row[0]
+                    brothers1.gpa = row[1]
+                    brothers1.year = row[2]
+                    brothers1.shifts = row[3]
+                    brothers1.days = row[4]
+                    brothers.list1.append(brothers1)
+
+               for x in range(len(brothers.list1)):
+                    print (brothers.list1[x].name,brothers.list1[x].gpa,brothers.list1[x].year,brothers.list1[x].shifts,brothers.list1[x].days)
 
           # #
           # num = brothers()

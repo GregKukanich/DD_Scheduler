@@ -1,3 +1,4 @@
+from Brothers import *
 class Calc:
      def calcShifts(self, num):
           if num >= 3.0 and num <= 4.0:
