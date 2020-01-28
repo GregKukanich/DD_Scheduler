@@ -57,8 +57,9 @@ class Calc:
                start_date += delta
           print(Calc.datesSet.__len__()*4)
 
-     def assignShifts(self):
-          for x in range(brothers.getTotShifts()):
+     # def assignShifts(self):
+     #      for x in range(brothers.getTotShifts()):
+
 
 
 
