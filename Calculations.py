@@ -1,4 +1,7 @@
 from Brothers import *
+from datetime import date, timedelta
+import random
+
 class Calc:
      def calcShifts(self, num):
           if num >= 3.0 and num <= 4.0:
@@ -38,5 +41,19 @@ class Calc:
           else:
                return "ERROR"
 
-     #def calcSched(self):
-          #
+     def calcSched(self):
+          dates = set()
+          usedDates = set()
+          start_date = date(2020,1,28)
+          end_date = date(2020,4,28)
+          delta = timedelta(days=1)
+          while start_date <= end_date:
+               if start_date.weekday() == 3:
+                    dates.add(start_date)
+               elif start_date.weekday() == 4:
+                    dates.add(start_date)
+               elif start_date.weekday() == 5:
+                    dates.add(start_date)
+               #print(start_date.strftime("%Y-%m-%d"))
+               start_date += delta
+          print(dates.__len__())

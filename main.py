@@ -1,6 +1,6 @@
 from calExport import *
 from guiTest import *
-
+from Calculations import *
 
 def main():
      # *****DIALOG STARTUP*****#
@@ -15,7 +15,8 @@ def main():
      csv.fileStart()  # Start .csv file for members entered into gui dialog
 
      calendar = cal()
-
+     calc = Calc()
+     calc.calcSched()
      sys.exit(app.exec_())
 
 
