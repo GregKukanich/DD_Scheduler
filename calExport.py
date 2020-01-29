@@ -28,6 +28,6 @@ class cal:
                e.name = "Designated Drivers"
                e.duration = timedelta(hours=5)
                c.events.add(e)
-               c.events
+               print(c.events.__len__())
           with open('DD_Calendar.ics', 'w') as my_file:
                my_file.writelines(c)
