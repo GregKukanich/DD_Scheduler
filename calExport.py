@@ -2,6 +2,7 @@ from ics import Calendar, Event
 from Calculations import *
 from datetime import datetime
 from pytz import timezone
+from Brothers import *
 class cal:
      def createCal(self, name):
           c = Calendar()
@@ -21,13 +22,15 @@ class cal:
                date = Calc.dates[x]
                time = " 21:30:00"
                date_time = str(date) + time
-               datetime_obj_naive = datetime.strptime(date_time, "%Y-%m-%d %H:%M:%S")
-               datetime_obj_eastern = timezone('US/Eastern').localize(datetime_obj_naive)
+               datetime_obj_naive = datetime.strptime(date_time, "%Y-%m-%d %H:%M:%S")     #Get date and time
+               datetime_obj_eastern = timezone('US/Eastern').localize(datetime_obj_naive)      #Convert to EST
                print(datetime_obj_eastern.strftime("%Y-%m-%d %H:%M:%S %Z%z"))
                e.begin = datetime_obj_eastern
                e.name = "Designated Drivers"
                e.duration = timedelta(hours=5)
+               for y in range(0,4):
+                    getDD(Calc.dates[x])
+                    e.description =
                c.events.add(e)
-               print(c.events.__len__())
-          with open('DD_Calendar.ics', 'w') as my_file:
-               my_file.writelines(c)
+               with open('DD_Calendar.ics', 'a') as my_file:
+                    my_file.writelines(c)

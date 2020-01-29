@@ -1,5 +1,6 @@
 from Calculations import *
 import csv
+from datetime import date, timedelta
 
 class brothers:
      list1 = []
@@ -32,16 +33,6 @@ class brothers:
                     print(brothers.list1[x].name, brothers.list1[x].gpa, brothers.list1[x].year,
                           brothers.list1[x].shifts, brothers.list1[x].days)
 
-          # #
-          # num = brothers()
-          # shiftsCalc = Calc()
-          # num.name = name
-          # num.gpa = gpa
-          # num.year = grade
-          # num.shifts = shiftsCalc.calcShifts(float(gpa))
-          # num.days =  shiftsCalc.calcDays(grade)
-          # self.list1.append(num)
-
      def getTotShifts():
           x=0
           while x != 1:
@@ -54,3 +45,7 @@ class brothers:
      def display(self):
           for i in self.list1:
                print(i)
+
+     def getDD(self, date):
+          for z in range(len(brothers.list1)):
+               if date.weekday() == 5
