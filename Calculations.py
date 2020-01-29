@@ -2,8 +2,8 @@ from datetime import date, timedelta
 from Brothers import *
 
 class Calc:
-     datesSet = set()
-     usedDatesSet = set()
+     dates = []
+     usedDates = []
      def calcShifts(self, num):
           if num >= 3.0 and num <= 4.0:
                return 4
@@ -48,14 +48,14 @@ class Calc:
           delta = timedelta(days=1)
           while start_date <= end_date:  # Looping through dates between start/end dates looking for Thrs,Fri,Sat within range
                if start_date.weekday() == 3:  # Thursday
-                    Calc.datesSet.add(start_date)
+                    Calc.dates.append(start_date)
                elif start_date.weekday() == 4:  # Friday
-                    Calc.datesSet.add(start_date)
+                    Calc.dates.append(start_date)
                elif start_date.weekday() == 5:  # Saturday
-                    Calc.datesSet.add(start_date)
+                    Calc.dates.append(start_date)
                # print(start_date.strftime("%Y-%m-%d")) Printing in formatted way
                start_date += delta
-          print(Calc.datesSet.__len__()*4)
+          print(Calc.dates.__len__()*4)
 
      # def assignShifts(self):
      #      for x in range(brothers.getTotShifts()):

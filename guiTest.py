@@ -11,6 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from Calculations import *
 from Brothers import *
 from csvExport import *
+from calExport import *
 import sys
 
 class Ui_Dialog(object):
@@ -95,7 +96,8 @@ class Ui_Dialog(object):
           brothers1 = brothers()
           brothers1.intake()
           calc = Calc()
-          calc.assignShifts()
+          calendar = cal()
+          calendar.scheduler()
           # ***********************# Creating Calendar for DDs
           # brothers.list1[]
           # ***********************#

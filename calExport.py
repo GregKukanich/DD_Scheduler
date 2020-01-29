@@ -1,5 +1,6 @@
 from ics import Calendar, Event
-
+from Calculations import *
+import datetime
 
 class cal:
      def createCal(self, name):
@@ -12,3 +13,20 @@ class cal:
           c.events
           with open('DD_Calendar.ics', 'w') as my_file:
                my_file.writelines(c)
+
+     def scheduler(self):
+          c = Calendar()
+          e = Event()
+          begin = "21:30:00"
+          for x in range(Calc.dates.__len__()):
+               datetime.date = Calc.dates[x]
+               datetime.datetime.combine(Calc.dates[x],) Calc.dates[x]
+               print("test")
+               e.begin = begin + beg
+               print(e.begin)
+               e.name = Calc.dates[x]
+               e.duration = datetime.timedelta(hours=5)
+               c.events.add(e)
+               c.events
+               with open('DD_Calendar.ics', 'w') as my_file:
+                    my_file.writelines(c)

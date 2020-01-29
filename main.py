@@ -15,7 +15,6 @@ def main():
      csv = csvExp()
      csv.fileStart()  # Start .csv file for members entered into gui dialog
 
-     calendar = cal()
      calc = Calc()
      calc.calcWeekendDays()
 
