@@ -28,9 +28,10 @@ class cal:
                e.begin = datetime_obj_eastern
                e.name = "Designated Drivers"
                e.duration = timedelta(hours=5)
+               e.description  = " "
+               test = brothers()
                for y in range(0,4):
-                    getDD(Calc.dates[x])
-                    e.description =
+                    e.description = e.description + str(test.getDD(Calc.dates[x]))
                c.events.add(e)
                with open('DD_Calendar.ics', 'a') as my_file:
                     my_file.writelines(c)

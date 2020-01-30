@@ -1,6 +1,6 @@
 from Calculations import *
 import csv
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 
 class brothers:
      list1 = []
@@ -13,7 +13,7 @@ class brothers:
           self.days = None
           self.time = None
           self.date = None
-          self.ctr = None
+          self.ctr = 0
 
      def intake(self):
           with open('Brothers.csv') as file:
@@ -26,7 +26,7 @@ class brothers:
                     brothers1.year = row[2]
                     brothers1.shifts = row[3]
                     brothers1.days = row[4]
-                    brothers1.ctr = brothers1.shifts
+                    brothers1.ctr = int(brothers1.shifts)
                     brothers.list1.append(brothers1)
 
                for x in range(len(brothers.list1)):
@@ -46,6 +46,19 @@ class brothers:
           for i in self.list1:
                print(i)
 
-     def getDD(self, date):
+     def getDD(self, str_date):
+          date_time_str = str(str_date)
+          date_time_obj = datetime.strptime(date_time_str,"%Y-%m-%d")
           for z in range(len(brothers.list1)):
-               if date.weekday() == 5
+               if (brothers.list1[z].days == "Thrs" and date_time_obj.weekday() == 3):
+                    if (int(brothers.list1[z].ctr) > 0):
+                         brothers.list1[z].ctr -= 1
+                         return brothers.list1[z].name
+               elif (brothers.list1[z].days == "Thrs or Fri" and date_time_obj.weekday() == 4):
+                    if (int(brothers.list1[z].ctr) > 0):
+                         brothers.list1[z].ctr -= 1
+                         return brothers.list1[z].name
+               elif (brothers.list1[z].days == 'Fri or Sat' and date_time_obj.weekday() == 5):
+                    if (int(brothers.list1[z].ctr) > 0):
+                         brothers.list1[z].ctr -= 1
+                         return brothers.list1[z].name
