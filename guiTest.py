@@ -11,6 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from Calculations import *
 from Brothers import *
 from csvExport import *
+#from main import *
 from calExport import *
 import sys
 
@@ -27,7 +28,7 @@ class Ui_Dialog(object):
           self.buttonBox = QtWidgets.QDialogButtonBox(Dialog)
           self.buttonBox.setGeometry(QtCore.QRect(20, 200, 271, 51))
           self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
-          self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Close | QtWidgets.QDialogButtonBox.Ok)
+          self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Apply|QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Save)
           self.buttonBox.setCenterButtons(True)
           self.buttonBox.setObjectName("buttonBox")
           self.verticalLayoutWidget = QtWidgets.QWidget(Dialog)
@@ -71,9 +72,12 @@ class Ui_Dialog(object):
           self.label_5.setGeometry(QtCore.QRect(100, 10, 391, 31))
           self.label_5.setObjectName("label_5")
           self.nameInput.setFocus()
+          self.retranslateUi(Dialog)
           self.buttonBox.accepted.connect(self.accept)
           self.buttonBox.rejected.connect(self.reject)
-          self.retranslateUi(Dialog)
+          btn = self.buttonBox.button(self.buttonBox.Apply)
+          btn.clicked.connect(self.submit)
+
 
           QtCore.QMetaObject.connectSlotsByName(Dialog)
 
@@ -93,15 +97,18 @@ class Ui_Dialog(object):
           self.nameInput.setFocus()
 
      def reject(self):
+          print("Button works for reject")
+
+          sys.exit(0)
+
+     def submit(self):
+          print("Button works for apply")
           brothers1 = brothers()
           brothers1.intake()
           calc = Calc()
+          calc.calcWeekendDays()
           calendar = cal()
           calendar.scheduler()
-          # ***********************# Creating Calendar for DDs
-          # brothers.list1[]
-          # ***********************#
-          sys.exit(0)
 
      def retranslateUi(self, Dialog):
           _translate = QtCore.QCoreApplication.translate
@@ -113,14 +120,10 @@ class Ui_Dialog(object):
           self.gradeInput.setItemText(3, _translate("Dialog", "Senior"))
           self.gradeInput.setItemText(4, _translate("Dialog", "5th Year"))
           self.gradeInput.setItemText(5, _translate("Dialog", "Old"))
-          self.label.setText(_translate("Dialog",
-                                        "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Name:</span></p></body></html>"))
-          self.label_2.setText(_translate("Dialog",
-                                          "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">GPA:</span></p></body></html>"))
-          self.label_3.setText(_translate("Dialog",
-                                          "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Year</span></p></body></html>"))
-          self.label_5.setText(_translate("Dialog",
-                                          "<html><head/><body><p><span style=\" font-size:18pt; font-weight:600;\">ΣΠ Designated Driver Scheduler</span></p></body></html>"))
+          self.label.setText(_translate("Dialog", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Name:</span></p></body></html>"))
+          self.label_2.setText(_translate("Dialog","<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">GPA:</span></p></body></html>"))
+          self.label_3.setText(_translate("Dialog","<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Year</span></p></body></html>"))
+          self.label_5.setText(_translate("Dialog","<html><head/><body><p><span style=\" font-size:18pt; font-weight:600;\">ΣΠ Designated Driver Scheduler</span></p></body></html>"))
 
 # if __name__ == "__main__":
 #     import sys

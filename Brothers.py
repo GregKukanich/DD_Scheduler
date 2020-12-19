@@ -14,6 +14,7 @@ class brothers:
           self.time = None
           self.date = None
           self.ctr = 0
+          self.lastShift = -1
 
      def intake(self):
           with open('Brothers.csv') as file:
@@ -33,32 +34,15 @@ class brothers:
                     print(brothers.list1[x].name, brothers.list1[x].gpa, brothers.list1[x].year,
                           brothers.list1[x].shifts, brothers.list1[x].days)
 
-     def getTotShifts():
-          x=0
-          while x != 1:
-               ctr =0
-               for i in range(len(brothers.list1)):
-                    ctr += int(brothers.list1[i].shifts)
-               x = x+1
-          return ctr
+     # def getTotShifts():
+     #      x=0
+     #      while x != 1:
+     #           ctr =0
+     #           for i in range(len(brothers.list1)):
+     #                ctr += int(brothers.list1[i].shifts)
+     #           x = x+1
+     #      return ctr
 
      def display(self):
           for i in self.list1:
                print(i)
-
-     def getDD(self, str_date):
-          date_time_str = str(str_date)
-          date_time_obj = datetime.strptime(date_time_str,"%Y-%m-%d")
-          for z in range(len(brothers.list1)):
-               if (brothers.list1[z].days == "Thrs" and date_time_obj.weekday() == 3):
-                    if (int(brothers.list1[z].ctr) > 0):
-                         brothers.list1[z].ctr -= 1
-                         return brothers.list1[z].name
-               elif (brothers.list1[z].days == "Thrs or Fri" and date_time_obj.weekday() == 4):
-                    if (int(brothers.list1[z].ctr) > 0):
-                         brothers.list1[z].ctr -= 1
-                         return brothers.list1[z].name
-               elif (brothers.list1[z].days == 'Fri or Sat' and date_time_obj.weekday() == 5):
-                    if (int(brothers.list1[z].ctr) > 0):
-                         brothers.list1[z].ctr -= 1
-                         return brothers.list1[z].name
