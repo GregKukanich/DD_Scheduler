@@ -54,7 +54,6 @@ class Calc:
                     Calc.dates.append(start_date)
                elif start_date.weekday() == 5:  # Saturday
                     Calc.dates.append(start_date)
-               # print(start_date.strftime("%Y-%m-%d")) Printing in formatted way
                start_date += delta
 
      def assignShifts(self, date):

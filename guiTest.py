@@ -125,11 +125,4 @@ class Ui_Dialog(object):
           self.label_3.setText(_translate("Dialog","<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Year</span></p></body></html>"))
           self.label_5.setText(_translate("Dialog","<html><head/><body><p><span style=\" font-size:18pt; font-weight:600;\">ΣΠ Designated Driver Scheduler</span></p></body></html>"))
 
-# if __name__ == "__main__":
-#     import sys
-#     app = QtWidgets.QApplication(sys.argv)
-#     Dialog = QtWidgets.QDialog()
-#     ui = Ui_Dialog()
-#     ui.setupUi(Dialog)
-#     Dialog.show()
-#     sys.exit(app.exec_())
+

@@ -34,14 +34,6 @@ class brothers:
                     print(brothers.list1[x].name, brothers.list1[x].gpa, brothers.list1[x].year,
                           brothers.list1[x].shifts, brothers.list1[x].days)
 
-     # def getTotShifts():
-     #      x=0
-     #      while x != 1:
-     #           ctr =0
-     #           for i in range(len(brothers.list1)):
-     #                ctr += int(brothers.list1[i].shifts)
-     #           x = x+1
-     #      return ctr
 
      def display(self):
           for i in self.list1:

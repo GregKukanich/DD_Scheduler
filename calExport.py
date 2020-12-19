@@ -25,7 +25,7 @@ class cal:
                date = Calc.dates[x]
                name = ""
                for y in range(4):
-                    name += str(calc1.assignShifts(calc1.dates[x]))
+                    name += str(calc1.assignShifts(calc1.dates[x])) + " "
                time = " 21:30:00"
                date_time = str(date) + time
                datetime_obj_naive = datetime.strptime(date_time, "%Y-%m-%d %H:%M:%S")     #Get date and time
@@ -36,8 +36,6 @@ class cal:
                e.name = "Designated Drivers"
                e.duration = timedelta(hours=5)
                e.description  = " "
-               test = brothers()
-               #for y in range(0,4):
                e.description = e.description + str(name)
                c.events.add(e)
                c.events
